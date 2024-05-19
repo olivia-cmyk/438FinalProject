@@ -3,7 +3,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 
 
-function CardPreviewComponent({front, back, cardId}) {
+function CardPreviewComponent({front, back, updateCard, cardId}) {
     const [isFlipped, setIsFlipped] = useState(false); //false = front, true = back
     const [currentFront, setFront] = useState(front)
     const [amEditingFront, setAmEditingFront] = useState(false); //false = not editing
@@ -25,6 +25,8 @@ function CardPreviewComponent({front, back, cardId}) {
 
     const handleFrontBlur = () => { //when clicking out, exit editing mode.
         setAmEditingFront(false);
+        updateCard(currentFront, currentBack, cardId);
+        console.log("Front of card", cardId, "is updated in the array.")
     }
 
     const handleDoubleClickBack = () => { //when doubleclick happens, trigger editing
@@ -37,6 +39,9 @@ function CardPreviewComponent({front, back, cardId}) {
 
     const handleBackBlur = () => { //when clicking out, exit editing mode.
         setAmEditingBack(false);
+        updateCard(currentFront, currentBack, cardId);
+        console.log("Back of card", cardId, "is updated in the array.")
+
     }
 
 

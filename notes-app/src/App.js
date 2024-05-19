@@ -11,7 +11,7 @@ function App() {
   function addCard() { //adds new cards to screen
     let currentL = cards.length + 1;
 
-    //new card
+    //defining new card
     let newCard = [{id: currentL, 
       front: "Card front " + currentL, 
       back: "Card back " + currentL}]
@@ -21,25 +21,28 @@ function App() {
 
     //replace old card list with new updated card list
     setCards(newCardsList);
+    setCurrentCardIndex(newCardsList.length - 1); // Jump to the most recent card
     console.log("List of new cards: ", newCardsList);
   }
-
-  useEffect(() => {
-    if (cards.length > 0) {
-      setCurrentCardIndex(cards.length - 1); // Set to the last card's index
-    }
-    console.log("Current card shown: ", cards.slice(-1));
-  }, [cards]);
-
+  
 
   function showNextCard() {
+    //sets current card index to be current index + 1
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
   }
 
   function showPrevCard() {
+      //sets current card index to be current index - 1
     setCurrentCardIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
   }
 
+  function updateCard(newFront, newBack, cardId) {
+    const updatedCards = cards.map((card) => {
+      //if card.id = cardId, return updated card. else, return original card.
+      return (card.id === cardId) ? { ...card, front: newFront, back: newBack } : card;
+    });
+    setCards(updatedCards); //update cards
+  }  
 
   return (
     <div className="App">
@@ -57,6 +60,7 @@ function App() {
             front={cards[currentCardIndex].front}
             back={cards[currentCardIndex].back}
             cardId={cards[currentCardIndex].id}
+            updateCard={updateCard}
           />
         )}
         <div className="arrow-container">
