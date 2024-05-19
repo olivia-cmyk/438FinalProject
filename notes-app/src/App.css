@@ -51,6 +51,14 @@
   align-items: center;
 }
 
+.middle-container{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
 .card-container{
   height: 30vw;
   width: 26vw;
@@ -107,6 +115,18 @@
   justify-content: center;
 }
 
+.flip-card-button{
+  background-color: white;
+  border: 3px solid #69306d;
+  color: #69306d;
+  font-size: 1em;
+  border-radius: 3px;
+  padding:0.5em 0.5em;
+
+  /* Flex settings*/
+  flex-shrink: 0;
+}
+
 .arrow-container{
   width: auto;
   height: auto;
@@ -121,4 +141,9 @@
   font-size: 3em;
   border-radius: 3px;
   padding:0.2em 0.5em;
+}
+
+.input{
+  background-color: white;
+  color: #69306d;
 }
