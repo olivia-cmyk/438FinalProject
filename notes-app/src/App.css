@@ -11,7 +11,7 @@
 
 .App-header {
   background-color: white;
-  color: pink;
+  color: #69306D;
   height: auto;
   padding: 0.5em;
 
@@ -30,8 +30,8 @@
 
 .Add-button{
   background-color: white;
-  border: 3px solid pink;
-  color: pink;
+  border: 3px solid #69306d;
+  color: #69306d;
   font-size: 2em;
   border-radius: 3px;
   padding:0em 0.5em;
@@ -41,7 +41,7 @@
 }
 
 .App-main{
-  background-color: pink;
+  background-color: #F2D7EE;
   margin: 0;
   flex: 1;
 
@@ -59,8 +59,7 @@
 }
 
 .flashcard{
-  background-color: white;
-  border: 3px solid rgb(183, 116, 164);
+  background-color: #d3bcc0;
   height: 100%;
   width: 100%;
 
@@ -74,29 +73,41 @@
 }
 
 .card-front{
-  background-color:yellow;
-  color: black;
+  background-color:#d3bcc0;
+  color: #69306d;
+  border: 3px solid #69306d;
+  text-align: center;
+
   height: 100%;
   width: 100%;
 
   position: absolute;
   backface-visibility: hidden;
+
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .card-back{
-  background-color: red;
-  color: black;
+  background-color: #0e103d;
+  color: #F2D7EE;
+  border: 3px solid #69306d;
+  text-align: center;
+
   height: 100%;
   width: 100%;
   position: absolute;
 
   backface-visibility: hidden;
   transform: rotateY(180deg);
+
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .arrow-container{
-  background-color: pink;
-  color: white;
   width: auto;
   height: auto;
   padding: 1.5vw;
