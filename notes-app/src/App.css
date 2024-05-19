@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.App-header {
+  background-color: white;
+  color: pink;
+  height: auto;
+  padding: 0.5em;
+
+  /* Flex Settings */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Title {
+  margin: 0.2;
+  padding: 0em 0.5em;
+  flex-grow: 2;
+  text-align: left;
+}
+
+.Add-button{
+  background-color: white;
+  border: 3px solid pink;
+  color: pink;
+  font-size: 2em;
+  border-radius: 3px;
+  padding:0em 0.5em;
+
+  /* Flex settings*/
+  flex-shrink: 0;
+}
+
+.App-main{
+  background-color: pink;
+  margin: 0;
+  flex: 1;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-container{
+  height: 30vw;
+  width: 26vw;
+
+  position: relative;
+}
+
+.flashcard{
+  background-color: white;
+  border: 3px solid rgb(183, 116, 164);
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front{
+  background-color:yellow;
+  color: black;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-back{
+  background-color: red;
+  color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.arrow-container{
+  background-color: pink;
+  color: white;
+  width: auto;
+  height: auto;
+  padding: 1.5vw;
+  text-align: center;
+}
+
+.arrow{
+  background-color: white;
+  border: 3px solid rgb(183, 116, 164);
+  color: rgb(183, 116, 164);
+  font-size: 3em;
+  border-radius: 3px;
+  padding:0.2em 0.5em;
+}
