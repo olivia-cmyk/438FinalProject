@@ -26,6 +26,10 @@
   padding: 0em 0.5em;
   flex-grow: 2;
   text-align: left;
+
+  display: flex;
+  flex-flow: row;
+  gap: 2em;
 }
 
 .Add-button{

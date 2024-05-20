@@ -1,14 +1,16 @@
 import './App.css';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import CardPreviewComponent from './CardPreviewComponent';
 
 
 function App() {
+  //states:
   const [cards, setCards] = useState(
     [{id: 1, front: "Card front 1", back: "Card back 1"}])
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
-  function addCard() { //adds new cards to screen
+  //adds new cards to cards array
+  function addCard() {
     let currentL = cards.length + 1;
 
     //defining new card
@@ -42,12 +44,16 @@ function App() {
       return (card.id === cardId) ? { ...card, front: newFront, back: newBack } : card;
     });
     setCards(updatedCards); //update cards
+    console.log("updatedCards called: ", updatedCards);
   }  
 
   return (
     <div className="App">
       <header className="App-header">
-        <h3 className="Title">日本語のフラッシュカード</h3>
+        <div className="Title">
+          <h3>日本語漢字のフラッシュカード</h3>
+          <p>Give simple nouns to get automatic kanji translation (ex. cat, ocean, sun). Double click to make your own edits.</p>
+        </div>
         <button className="Add-button" onClick={addCard}>+</button>
       </header>
       <main className="App-main">
@@ -61,6 +67,7 @@ function App() {
             back={cards[currentCardIndex].back}
             cardId={cards[currentCardIndex].id}
             updateCard={updateCard}
+            cards={cards}
           />
         )}
         <div className="arrow-container">
