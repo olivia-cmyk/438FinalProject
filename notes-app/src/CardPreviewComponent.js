@@ -4,7 +4,7 @@ import {useState} from 'react';
 import axios from 'axios';
 
 
-function CardPreviewComponent({front, back, updateCard, cardId, cards}) {
+function CardPreviewComponent({front, back, updateCard, cardId, cards, fireNoteId}) {
     const [isFlipped, setIsFlipped] = useState(false); //false = front, true = back
     const [currentFront, setFront] = useState(front)
     const [amEditingFront, setAmEditingFront] = useState(false); //false = not editing
@@ -28,7 +28,7 @@ function CardPreviewComponent({front, back, updateCard, cardId, cards}) {
 
     const handleFrontBlur = () => { //when clicking out, exit editing mode.
         setAmEditingFront(false);
-        updateCard(currentFront, currentBack, cardId); //saves 
+        updateCard(currentFront, currentBack, cardId, fireNoteId); //saves 
         console.log("Front of card ", cardId, " is updated in the array.");
         console.log("handleFrontBlur: Cards Array: ", cards);
     }
@@ -43,7 +43,7 @@ function CardPreviewComponent({front, back, updateCard, cardId, cards}) {
 
     const handleBackBlur = () => { //when clicking out, exit editing mode.
         setAmEditingBack(false);
-        updateCard(currentFront, currentBack, cardId);
+        updateCard(currentFront, currentBack, cardId, fireNoteId);
         console.log("Back of card", cardId, "is updated in the array.");
         console.log("handleBackBlur: ", cards);
     }
@@ -77,7 +77,7 @@ function CardPreviewComponent({front, back, updateCard, cardId, cards}) {
 
     const handleKanjiBackChange = (kanji) => {
         setBack(kanji);
-        updateCard(currentFront, kanji, cardId);
+        updateCard(currentFront, kanji, cardId, fireNoteId);
         console.log("handleKanjiBackChange for card ", cardId, "is updated in array.");
     }
 
