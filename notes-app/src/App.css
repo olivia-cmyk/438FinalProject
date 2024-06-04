@@ -22,6 +22,28 @@
   gap: 1em;
 }
 
+@media (max-width: 900px) {
+ .App-header {
+  height: 10vh;
+  justify-content: center;
+ }
+
+ .heading-text{
+  display: none;
+ }
+
+ .Add-button {
+  flex: 1;
+ }
+
+ .Title {
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-grow: 0;
+ }
+}
+
 .Title {
   margin: 0.2;
   padding: 0em 0.5em;
@@ -43,6 +65,12 @@
 
   /* Flex settings*/
   flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .App-main {
+    padding: 2em;
+  }
 }
 
 .App-main{
@@ -69,6 +97,13 @@
   width: 26vw;
 
   position: relative;
+}
+
+@media (max-width: 900px) {
+ .card-container{
+  height: 100vw;
+  width: 60vw;
+ }
 }
 
 .flashcard{
@@ -146,6 +181,14 @@
   font-size: 3em;
   border-radius: 3px;
   padding:0.2em;
+}
+
+@media (max-width: 900px) {
+  .arrow{
+    font-size: 1.5em;
+    height: 70vw;
+    width: 10vw;
+  }
 }
 
 .input{

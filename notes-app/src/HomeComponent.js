@@ -137,8 +137,8 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <div className="Title">
-          <h3>日本語漢字のフラッシュカード</h3>
-          <p className="instructions">Give simple nouns to get automatic kanji translation (ex. cat, ocean, sun). Double click to make your own edits.</p>
+          <h3 className="heading-text">日本語漢字のフラッシュカード</h3>
+          <p className="heading-text">Give simple nouns to get automatic kanji translation (ex. cat, ocean, sun). Double click to make your own edits.</p>
         </div>
         <button className="Add-button" onClick={addCard}>+</button>
         <button className="Add-button" onClick={handleSignOut}>Sign out</button>
